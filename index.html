@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Records Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Student Records Management System</h1>
+        
+        <!-- Database Creation Section -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3>Phase 1: Database & Data Creation</h3>
+            </div>
+            <div class="card-body">
+                <button onclick="initializeDatabase()" class="btn btn-primary mb-2">Initialize Database with Sample Data</button>
+            </div>
+        </div>
+
+        <!-- Query Section -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3>Phase 2: Queries</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Retrieval Tasks</h4>
+                        <button onclick="getAllStudents()" class="btn btn-info mb-2 w-100">4. Get All Students</button>
+                        <button onclick="getCSStudents()" class="btn btn-info mb-2 w-100">5. Get CS Students</button>
+                        <button onclick="getHighMathScorers()" class="btn btn-info mb-2 w-100">6. Math Score > 80</button>
+                        <button onclick="getOlderStudents()" class="btn btn-info mb-2 w-100">7. Age > 21</button>
+                        <button onclick="getRecentEnrollments()" class="btn btn-info mb-2 w-100">8. Recent Enrollments</button>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Update Tasks</h4>
+                        <button onclick="increaseMathMarks()" class="btn btn-warning mb-2 w-100">9. Increase Math Marks</button>
+                        <button onclick="addActiveStatus()" class="btn btn-warning mb-2 w-100">10. Add Active Status</button>
+                        <button onclick="changeDepartment()" class="btn btn-warning mb-2 w-100">11. Change Department</button>
+                    </div>
+                </div>
+                
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <h4>Delete Tasks</h4>
+                        <button onclick="deleteLowestScience()" class="btn btn-danger mb-2 w-100">12. Delete Lowest Science</button>
+                        <button onclick="deleteOldEnrollments()" class="btn btn-danger mb-2 w-100">13. Delete Old Enrollments</button>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Aggregation Tasks</h4>
+                        <button onclick="getEnglishAverage()" class="btn btn-secondary mb-2 w-100">14. English Average</button>
+                        <button onclick="getDepartmentCount()" class="btn btn-secondary mb-2 w-100">15. Department Count</button>
+                        <button onclick="getTopStudents()" class="btn btn-secondary mb-2 w-100">16. Top 3 Students</button>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <h4>Indexing Tasks</h4>
+                        <button onclick="createNameIndex()" class="btn btn-dark mb-2">17. Create Name Index</button>
+                        <button onclick="showIndexes()" class="btn btn-dark mb-2">18. Show Indexes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <h4>Insert New Student</h4>
+            </div>
+            <div class="card-body">
+                <form id="studentForm">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <input type="number" class="form-control mb-2" id="student_id" placeholder="Student ID (optional)">
+                            <input type="text" class="form-control mb-2" id="name" placeholder="Name" required>
+                            <input type="number" class="form-control mb-2" id="age" placeholder="Age" required>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-control mb-2" id="gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                            <select class="form-control mb-2" id="department" required>
+                                <option value="">Select Department</option>
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Data Science">Data Science</option>
+                                <option value="Electrical Engineering">Electrical Engineering</option>
+                                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                <option value="Civil Engineering">Civil Engineering</option>
+                                <option value="Chemical Engineering">Chemical Engineering</option>
+                            </select>
+                            <input type="date" class="form-control mb-2" id="enrollment_date" required>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="number" class="form-control mb-2" id="mathMarks" placeholder="Math Marks (0-100)" required>
+                            <input type="number" class="form-control mb-2" id="scienceMarks" placeholder="Science Marks (0-100)" required>
+                            <input type="number" class="form-control mb-2" id="englishMarks" placeholder="English Marks (0-100)" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success">Add New Student</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Results Display -->
+        <div class="card">
+            <div class="card-header">
+                <h3>Results</h3>
+            </div>
+            <div class="card-body">
+                <pre id="results" class="bg-light p-3 rounded"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
