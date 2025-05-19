@@ -1,0 +1,132 @@
+1. Suppose an instruction pipeline has a branch instruction that causes a delay due to flushing the pipeline. What kind of hazard is this?
+(A) Data hazard
+(B) Structural hazard
+(C) Control hazard
+(D) Instruction hazard
+Answer-C
+
+
+2. If a system with N pipeline stages has a clock cycle time T, what is the maximum possible throughput?
+A) 1 / (N × T)
+B) N / T
+C) 1 / T
+D) N × T
+Answer-C
+Since each clock cycle takes T time units, the maximum throughput is 1 / T instructions per unit time.
+
+3. If a pipeline has 5 stages but suffers an average of 1 stall per 5 instructions, what happens to its throughput?
+A) Throughput increases
+B) Throughput decreases slightly
+C) Throughput remains the same
+D) Pipeline execution time doubles
+Answer-B
+  since there’s 1 stall per 5 instructions, the pipeline will occasionally pause for one cycle. 
+ This introduces a slight delay, reducing the overall throughput.
+
+4.Throughput doubles when clock frequency increases from 1 GHz to __?
+a) 1.5 GHz
+b) 2 GHz
+c) 3 GHz
+d) 4 GHz
+Answer-B
+	
+5. A task experiences a time delay of 80 ms when executed sequentially. When executed on a parallel system, the time delay reduces to 20 ms. What is the speedup ratio S, given by S Time delay in normal execution Time delay in parallel execution ?
+A) 2
+B) 3
+C) 4
+D) 5
+Answer-C
+
+6. . A pipeline experiences a stall due to a RAW (Read After Write) dependency between two instructions. What type of hazard is this?
+(A) Structural
+(B) Data
+(C) Control
+(D) None
+Answer-B
+
+
+7. A processor has a clock cycle time of 5 ns and normally executes a program in 800 cycles. Due to memory delays, an additional 200 cycles are required. What is the actual execution time with the delay?
+A) 4000 ns
+B) 5000 ns
+C) 6000 ns
+D) 7000 ns
+Answer-B
+Execution time with delay:
+Tp Clock cycle time Total cycles with delay
+T_P = 5 * (800 + 200) = 5 *1000 = 5000ns
+So, the correct answer is B) 5000 ns.
+8. Which of the following hazards is the most difficult to handle in a pipeline?
+A) Structural hazard
+B) Data hazard
+C) Control hazard
+D) All are equally difficult
+Answer-C
+Occurs due to branch instructions, requiring complex prediction techniques. Incorrect predictions cause pipeline flushing, making it the hardest to manage.
+
+9. A pipelined processor has 5 stages, and each stage takes 3 ns to complete. If the pipeline is fully filled, what is the throughput of the pipeline?
+(A) 1 instruction every 15 ns
+(B) 1 instruction every 3 ns
+(C) 1 instruction every 5 ns
+(D) 1 instruction every 1 ns
+Answer-B
+
+10. A CPU has a clock cycle time of 2 ns. A program normally executes in 1000 cycles, but due to cache misses, it requires an additional 500 cycles. What is the speedup ratio when comparing the ideal execution time to the delayed execution time?
+S= Execution time without delay Execution time with delay
+A) 1.2
+B) 1.3
+C) 1.4
+D) 1.5
+Answer-D
+
+11. If a processor has 5 pipeline stages, but due to hazards, it completes only 3 instructions per 5 cycles, what is the actual throughput?
+(A) 1 instruction per cycle
+(B) 0.6 instructions per cycle
+(C) 0.8 instructions per cycle
+(D) 1.2 instructions per cycle
+Answer-B
+
+
+12. .A processor is redesigned from a 4-stage to an 8-stage pipeline while keeping the cycle time the same. What happens to the ideal throughput?
+(A) Doubles
+(B) Halves
+(C) Remains the same
+(D) Becomes four times
+Answer-C
+
+
+13. Which of the following factors does NOT directly affect the throughput of a pipelined processor?
+(A) Pipeline depth
+(B) Clock cycle time
+(C) Number of registers
+(D) Pipeline hazards
+Answer-C
+ Pipeline depth (number of stages) More stages improve throughput.
+ Clock cycle time - A smaller cycle time increases throughput.
+ Pipeline hazards - Reduce throughput .
+
+14. A sequential program runs in 120 seconds. When executed on a parallel system, it completes in 30 seconds. What is the speedup ratio S, given by S = ? 
+
+A) 2
+B) 3
+C) 4
+D) 5
+Answer-C
+Solution:
+Speedup Ratio is given by:
+S =TN/ Tp
+• TN = 120 seconds (execution time on a normal sequential system)
+• Tp = 30 seconds (execution time on a parallel system)
+So, the correct answer is C) 4.
+
+15. A computer program takes 100 seconds to execute on a single processor system. When executed on a parallel system with 4 processors, the execution time reduces to 40 seconds. What is the speedup ratio?
+A) 2.0
+B) 2.5
+C) 3.0
+D) 4.0
+Answer-B
+Speedup Ratio S is given by:
+S= TN
+• T₁ = 100 seconds (execution time on a single processor)
+•TN = 40 seconds (execution time on N processors)
+S = 100/ 40= 2.5
+The correct answer is B) 2.5.
